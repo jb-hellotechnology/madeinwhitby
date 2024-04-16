@@ -283,18 +283,18 @@ function remove_editor() {
 add_action('admin_init', 'remove_editor');
 
 
-add_action( 'wp_dashboard_setup', 'ht_dashboard_add_widgets' );
-function ht_dashboard_add_widgets() {
-	wp_add_dashboard_widget( 'ht_dashboard_widget_news', __( 'Hello Technology', 'ht' ), 'ht_dashboard_widget_news_handler' );
+add_action( 'wp_dashboard_setup', 'MiW_dashboard_add_widgets' );
+function MiW_dashboard_add_widgets() {
+	wp_add_dashboard_widget( 'MiW_dashboard_widget_news', __( 'Made in Whitby', 'MiW' ), 'MiW_dashboard_widget_news_handler' );
 }
 
-function ht_dashboard_widget_news_handler() {
+function MiW_dashboard_widget_news_handler() {
 	_e( 'Welcome to your website.', 'ht' );
 }
 
 
 
-function ht_custom_dashboard_name(){
+function MiW_custom_dashboard_name(){
     if ( $GLOBALS['title'] != 'Dashboard' ){
         return;
     }
@@ -302,9 +302,9 @@ function ht_custom_dashboard_name(){
     $GLOBALS['title'] =  __( 'Hello Technology' ); 
 }
 
-add_action( 'admin_head', 'ht_custom_dashboard_name' );
+add_action( 'admin_head', 'MiW_custom_dashboard_name' );
 
-function ht_login_logo() { ?>
+function MiW_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
             background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/madeinwhitby.jpg);
@@ -316,7 +316,7 @@ function ht_login_logo() { ?>
         }
     </style>
 <?php }
-add_action( 'login_enqueue_scripts', 'ht_login_logo' );
+add_action( 'login_enqueue_scripts', 'MiW_login_logo' );
 
 //Remove Gutenberg Block Library CSS from loading on the frontend
 function smartwp_remove_wp_block_library_css(){
