@@ -23,4 +23,4 @@ wp-content/themes/hellotechnology/
 !.cpanel.yml
 
 # don't ignore this file
-!.gitignore
+!.gitignore 
