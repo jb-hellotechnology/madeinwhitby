@@ -18,8 +18,7 @@
 	            <div class="content hero">
 	            	<div class="restrict">
 		            	<div class="textarea flow bg-no-background">
-		            		<h1>Contact Hello Technology to discuss your project.</h1>
-		            		<h2>Want to talk about websites, IT systems, marketing, software, graphics or something else? Get in touch!</h2>
+		            		<h1>Contact Made in Whitby</h1>
 		            	</div>
 		            </div>
 	            </div>
@@ -40,16 +39,11 @@
 		
 		        // Case: Hero.
 		        if( get_row_layout() == 'hero' ):
-		        	$color = get_sub_field('color');
-		            $heading = get_sub_field('heading');
-		            $subheading = get_sub_field('subheading');
+		        	$hero = get_sub_field('hero');
 		            echo '
 		            <div class="content hero">
 		            	<div class="restrict">
-			            	<div class="textarea flow bg-'.$color.'">
-			            		<h1>'.$heading.'</h1>
-			            		<h2>'.$subheading.'</h2>
-			            	</div>
+							<img src="'.$hero['sizes']['1536x1536'].'" alt="'.$hero['alt'].'" />
 			            </div>
 		            </div>';
 		            
@@ -64,117 +58,69 @@
 			            	</div>
 			            </div>
 		            </div>';
-		
-		        // Case: Highlight.
-		        elseif( get_row_layout() == 'highlight' ):
-		        	$background = get_sub_field('background');
-		        	$color = get_sub_field('color');
-		            $heading = get_sub_field('heading');
-		            $subheading = get_sub_field('subheading');
-		            $url = get_sub_field('url');
-		            $button = get_sub_field('button_label');
-		            echo '
-		            <div class="content bg-'.$background.' margin-top">
-		            	<div class="restrict">
-			            	<div class="highlight">
-			            		<div class="heading">
-				            		<h2>'.$heading.'</h2>
-			            		</div>
-			            		<div class="callout bg-'.$color.'">
-			            			<div>
-			            				<img src="'; echo bloginfo('stylesheet_directory').'/images/bubble_1.png'; echo '" class="bubble" alt="Laptop" />
-			            			</div>
-			            			<div>
-			            				<img src="'; echo bloginfo('stylesheet_directory').'/images/hello_technology_sand.svg'; echo '" alt="Hello" />
-			            			</div>
-				            		<p>'.$subheading.'</p>
-				            		<div>
-					            		<a href="'.$url.'" class="button bg-white">'.$button.'</a>
-				            		</div>
-				            	</div>
-			            	</div>
-			            </div>
-		            </div>';
-		            
-		        // Case: Island.
-		        elseif( get_row_layout() == 'island' ):
-		            $heading = get_sub_field('heading');
-		            $subheading = get_sub_field('subheading');
-		            $logos = get_sub_field('logos');
-		            if(get_sub_field('negative_margin')){
-			        	$negative_margin = 'negative_margin';    
-			        }
-		            $background = get_sub_field('background');
-		            $color = get_sub_field('color');
-		            echo '
-		            <div class="content bg-'.$background.'">
-		            	<div class="restrict">
-			            	<div class="island bg-'.$color.' '.$negative_margin.'">
-			            		<div class="heading">
-				            		<p><strong>'.$heading.'</strong></p>
-				            		<ul class="logos">';
-				            		foreach($logos as $logo){
-					            		//print_r($key.'-'.$item);
-					            		//echo $logo['alt'];
-					            		//print_r($logo);
-					            		echo "<li><img src=".$logo['logo']['sizes']['medium_large']." alt=".$logo['alt']." /></li>";
-				            		}
-				            		echo '</ul>
-			            		</div>
-			            		<div class="subheading">
-				            		<img src="'; echo bloginfo('stylesheet_directory').'/images/bubble_1.png'; echo '" class="bubble" alt="Laptop" />
-				            		<p>'.$subheading.'</p>
-				            	</div>
-			            	</div>
-			            </div>
-		            </div>';
-		            
-		        // Case: Blocks.
-		        elseif( get_row_layout() == 'blocks' ):
-		            if(get_sub_field('negative_margin')){
-			        	$negative_margin = 'negative_margin';   
-			        }
-					// Check rows exists.
-					if( have_rows('blocks') ):
-						echo '
-					<div class="content bg-no-background '.$negative_margin.'">
-						<div class="restrict blocks">';
-					    // Loop through rows.
-					    while( have_rows('blocks') ) : the_row();
 					
-					        // Load sub field value.
-					        $heading = get_sub_field('heading');
-					        $subheading = get_sub_field('subheading');
-					        $color = get_sub_field('color');
-					        $image = get_sub_field('image');
-					        echo '
-					        <div class="block">
-					        	<div class="text flow bg-'.$color.' '; if($image){ echo 'image'; } echo '">
-					        		<h2>'.$heading.'</h2>
-					        		<p>'.$subheading.'</p>
-					        	</div>';
-					        	if($image){
-									echo '
-					        	<div class="image">
-					        		<img src="'.$image['sizes']['medium_large'].'" alt="" />';
-									echo '
-					        	</div>';
-					        	}
-					        echo '
-					        </div>';
-					
-					    // End loop.
-					    endwhile;
-						echo '
+				// Case: CTA.
+				elseif( get_row_layout() == 'cta' ):
+					$heading = get_sub_field('heading');
+					$subheading = get_sub_field('subheading');
+					$url = get_sub_field('url');
+					echo '
+					<div class="content bg-pink">
+						<div class="restrict">
+							<div class="textarea no-margin flow">
+								<p class="alert">Important News</p>
+								<h2>'.$heading.'</h2>
+								<h3>'.$subheading.'</h3>
+								<p><a href="'.$url.'">Find Out More &rarr;</a></p>
+							</div>
 						</div>
 					</div>';
-					// No value.
-					else :
-					    // Do something...
+				
+				// Case: Video.
+				elseif( get_row_layout() == 'video' ):
+					$heading = get_sub_field('heading');
+					$oembed = get_sub_field('youtube_video');
+					echo '
+					<div class="content bg-pink">
+						<div class="restrict">
+							<div class="textarea video flow">
+								<h2>'.$heading.'</h2>
+								'.$oembed.'
+							</div>
+						</div>
+					</div>';
+				
+				// Case: Gallery.
+				elseif( get_row_layout() == 'gallery' ):
+					if( have_rows('images') ):
+						$items = get_sub_field('images');
+						echo '
+						<div class="content bg-no-background">
+							<div class="restrict">
+								<div class="gallery">';
+								while( have_rows('images') ) : the_row();
+									$image = get_sub_field('image');
+									echo '<a href="'.$image['sizes']['large'].'" data-src="'.$image['sizes']['large'].'" data-fancybox="gallery"><img src="'.$image['sizes']['medium'].'" alt="" /></a>';
+								endwhile;
+								echo '
+								</div>
+							</div>
+						</div>';
+					else:
+						
 					endif;
-					
-				// Case: Blocks.
+		            
+		        // Case: Grid.
 		        elseif( get_row_layout() == 'grid' ):
+					$heading = get_sub_field('heading');
+					echo '
+						<div class="content bg-no-background">
+							<div class="restrict">
+								<div class="textarea no-margin flow">
+									<h2>'.$heading.'</h2>
+								</div>
+							</div>
+						</div>';
 					// Check rows exists.
 					if( have_rows('items') ):
 						echo '
@@ -184,102 +130,154 @@
 					    while( have_rows('items') ) : the_row();
 					
 					        // Load sub field value.
-					        $icon = get_sub_field('icon');
 					        $heading = get_sub_field('heading');
-					        $text = get_sub_field('text');
+					        $image = get_sub_field('image');
+							$description = get_sub_field('description');
+							$url = get_sub_field('url');
 					        echo '
-				        	<div class="item flow">
-				        		<i class="fa-solid '.$icon.' fa-2xl"></i>
-				        		<h2>'.$heading.'</h2>
-				        		<p>'.$text.'</p>
-				        	</div>';
+					        <div class="item">
+					        	<div class="text flow bg-pink '; if($image){ echo 'image'; } echo '">
+					        		<h2>'.$heading.'</h2>
+					        	</div>';
+					        	if($image){
+									echo '
+					        	<div class="image">
+					        		<img src="'.$image['sizes']['medium_large'].'" alt="" />';
+									echo '
+					        	</div>';
+					        	}
+								echo '<p>'.$description.'</p>';
+								if($url){
+									echo '
+								<p><a href="'.$url.'">More Details &rarr;</a></p>';
+								}
+					        echo '
+					        </div>';
 					
 					    // End loop.
 					    endwhile;
 						echo '
 						</div>
 					</div>';
-					// No value.
-					else :
-					    // Do something...
+
+					else:
+
 					endif;
-		
-		        endif;
+				
+				// Case: Grid.
+				elseif( get_row_layout() == 'map' ):
+					echo '
+						<div class="content bg-no-background">
+							<div class="restrict">
+								<div class="textarea no-margin flow">
+									<h2>Map of Makers</h2>
+								</div>
+								<div id="map" style="width:100%;height:700px;"></div>
+								<div class="textarea flow">
+									<h3>Directory</h3>
+								</div>
+								<div class="makers">';
+								// Check rows exists.
+								if( have_rows('makers') ):
+									// Loop through rows.
+									$i = 1;
+									while( have_rows('makers') ) : the_row();
+								
+										// Load sub field value.
+										$name = get_sub_field('name');
+										$description = get_sub_field('description');
+										$url = get_sub_field('url');
+										$lat = get_sub_field('lat');
+										$lng = get_sub_field('lng');
+										echo '<div class="flow"><h3>'.$name.'</h3><p>'.$description.'</p><p><a href="'.$url.'">Find out more &rarr;</a></p></div>';
+										$i++;
+									// End loop.
+									endwhile;
+								
+								// No value.
+								else :
+									// Do something...
+								endif;
+								echo '
+								</div>
+								<script type="text/javascript">
+									var locations = [
+										';
+									// Check rows exists.
+									if( have_rows('makers') ):
+										// Loop through rows.
+										$i = 1;
+										while( have_rows('makers') ) : the_row();
+									
+											// Load sub field value.
+											$name = get_sub_field('name');
+											$description = get_sub_field('description');
+											$url = get_sub_field('url');
+											$lat = get_sub_field('lat');
+											$lng = get_sub_field('lng');
+											if($lng<>''){
+												echo "[\"".$name."\", \"".$description."\", \"".$url."\", ".$lat.", ".$lng.", $i],";
+											}
+											$i++;
+										// End loop.
+										endwhile;
+									
+									// No value.
+									else :
+										// Do something...
+									endif;
+									echo '
+									];
+									
+									var map = new google.maps.Map(document.getElementById("map"), {
+									  zoom: 14,
+									  center: new google.maps.LatLng(54.485080, -0.617070),
+									  mapTypeId: google.maps.MapTypeId.ROADMAP
+									});
+									
+									var infowindow = new google.maps.InfoWindow();
+								
+									var marker, i;
+									
+									var styles = [
+									  {
+										featureType: "poi",
+										elementType: "business",
+										stylers: [
+										  { visibility: "off" }
+										]
+									  }
+									];
+									
+									map.setOptions({styles: styles});
+									
+									const image = {
+										url: "https://madeinwhitby.com/wp-content/themes/madeinwhitby/marker_86.png",
+										scaledSize: new google.maps.Size(42, 42), // scaled size
+									}
+
+									for (i = 0; i < locations.length; i++) {  
+									  marker = new google.maps.Marker({
+										position: new google.maps.LatLng(locations[i][3], locations[i][4]),
+										icon: image,
+										map: map
+									  });
+									  
+									  google.maps.event.addListener(marker, "click", (function(marker, i) {
+										return function() {
+										  infowindow.setContent("<p><strong>" + locations[i][0] + "</strong></p><p>" + locations[i][1] + "</p><p><a href=\"" + locations[i][2] + "\">Find out more &rarr;</a></p>");
+										  infowindow.open(map, marker);
+										}
+									  })(marker, i));
+									}
+								  </script>
+							</div>
+						</div>';
+				
+				endif;
 		
 		    // End loop.
 		    endwhile;
-		    
-		    if ( is_front_page() ) :
-			    echo '
-			    <div class="content bg-white">
-			    	<div class="restrict">
-			    		<h2>Helpful Articles</h2>
-				    	<ul class="posts">';
-					    $args = array(
-					        'posts_per_page' => 2, /* how many post you need to display */
-					        'offset' => 0,
-					        'orderby' => 'post_date',
-					        'order' => 'DESC',
-					        'post_type' => 'post', /* your post type name */
-					        'post_status' => 'publish'
-					    );
-					    $query = new WP_Query($args);
-					    if ($query->have_posts()) :
-					        while ($query->have_posts()) : $query->the_post();
-					            ?>
-					            <li class="bg-yellow">
-						            <a href="<?php the_permalink(); ?>" class="flow">
-						            	<h2><?php the_title(); ?></h2>
-										<p><?php the_excerpt(); ?></p>
-						            </a>
-					            </li>
-					            <?php
-					        endwhile;
-					    endif;
-					    wp_reset_postdata();
-					    echo '
-				    	</ul>
-				    	<a class="button posts" href="/articles/">More articles</a>
-			    	</div>
-			    </div>';
-		    endif;
-
-		    
-		    
-		    if ( $post_slug == 'support' ) :
-			    echo '
-			    <div class="content bg-white">
-			    	<div class="restrict">
-				    	<ul class="posts">';
-					    $args = array(
-					        'posts_per_page' => 4, /* how many post you need to display */
-					        'offset' => 0,
-					        'orderby' => 'post_date',
-					        'order' => 'DESC',
-					        'post_type' => 'post', /* your post type name */
-					        'post_status' => 'publish',
-					        'cat' => 4,
-					    );
-					    $query = new WP_Query($args);
-					    if ($query->have_posts()) :
-					        while ($query->have_posts()) : $query->the_post();
-					            ?>
-					            <li class="bg-yellow">
-						            <a href="<?php the_permalink(); ?>" class="flow">
-						            	<h2><?php the_title(); ?></h2>
-										<p><?php the_excerpt(); ?></p>
-						            </a>
-					            </li>
-					            <?php
-					        endwhile;
-					    endif;
-					    wp_reset_postdata();
-					    echo '
-				    	</ul>
-				    	<a class="button posts" href="/articles/category/support/">Read more</a>
-			    	</div>
-			    </div>';
-		    endif;
 		
 		// No value.
 		else :

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package hellotechnology
+ * @package madeinwhitby
  */
 
 ?>
@@ -14,15 +14,16 @@
 	<footer id="colophon" class="site-footer">
 		<div class="restrict">
 			<div class="site-info flow">
-				<p><strong>Hello Technology</strong><br />
-				Company Number 15512176<br />
+				<p><strong>Made in Whitby</strong><br />
+				Company Number 14913587<br />
 				Registered in England and Wales</p>
 				<p>
-					<a href="https://linkedin.com/company/hellotechnology/"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a> 
-					<a href="https://instagram.com/_hellotechnology"><i class="fa fa-instagram"></i><span>Instagram</span></a> 
-					<a href="https://twitter.com/hellotechnology"><i class="fab fa-x-twitter"></i><span>Twitter/X</span></a>
+					<a href="https://www.facebook.com/madeinwhitbyuk/"><i class="fa fa-linkedin"></i><span>Facebook</span></a> 
+					<a href="https://www.instagram.com/madeinwhitbyuk/"><i class="fa fa-instagram"></i><span>Instagram</span></a> 
 				</p>
-				<p>&copy; Hello Technology 2024</p>
+				<p>&copy; Made in Whitby <?= date('Y') ?><br />
+				Photos &amp; Social Media by <a href="https://www.acornmcc.co.uk/">Acorn Marketing</a><br />
+				Website by <a href="https://hellotechnology.co.uk" target="_blank" title="Website Design in Whitby">Hello Technology</a></p>
 			</div><!-- .site-info -->
 			<div class="quicklinks">
 				<p><strong>Quick Links</strong></p>
@@ -36,8 +37,8 @@
 				?>
 			</div><!-- .quicklinks -->
 			<div class="signup flow" id="signup">
-				<p><strong>Hello Technology Mailing List</strong><br />
-				Join the Hello Technology mailing list and get useful technology tips in your inbox.</p>
+				<p><strong>Made in Whitby Mailing List</strong><br />
+				Join the Made in Whitby mailing list and be the first to hear about news and events.</p>
 				<!-- Begin Brevo Form -->
 				
 				<!-- START - We recommend to place the below code where you want the form in your website html  -->
@@ -66,7 +67,7 @@
 				    </div>
 				    <div></div>
 				    <div id="sib-container" class="">
-				      <form id="sib-form" method="POST" action="https://1905f954.sibforms.com/serve/MUIFAHPR-GJua4sLhid3CHA-wuv-V40aKRewVB2qOX1xo0ZOUspwz6XmN4APwwSX_kkyquYkVrr7mI1InWtnCnc_0gYGnItoahUzmBIzag6wUVKDapx3HMt6LnHLvaA1DwVSlWUo_6gAhdfEMiSW2aKcH3FZqZ0QHneBm5tmRm-YnJMsErG6lADUByi-JNbutAaaf1BFNYpLyyLB" data-type="subscription">
+				      <form id="sib-form" method="POST" action="https://1905f954.sibforms.com/serve/MUIFAOapbA_jBR-VPI6GbS6QHZX64wOuPupolbVUEDcPDzdOwysqfJ61GzKWvoSl4JU6uEpQxlCxJ-7ImYC48c9p3xHTJaFcw3aiU4WdXShL06Vl10x82jbrsa9aK9e-6Of5-MspFQRvYDiLaIaHQrxlJsYC0K_IJVgz9uxi5-BDvfXgnCCctxMNdzMlddT1cpPvbiz69XPMRd3-" data-type="subscription">
 				        <div style="">
 				          <div class="sib-input sib-form-block">
 				            <div class="form__entry entry_block">
@@ -103,7 +104,7 @@
 				<!-- End Brevo Form -->
 			</div><!-- .signup -->
 			<div class="logo">
-				<img src="<?php bloginfo('stylesheet_directory');?>/images/hello_technology_logo_white.svg" alt="Hello Technology" />
+				<img src="<?php bloginfo('stylesheet_directory');?>/images/madeinwhitby.jpg" alt="Hello Technology" />
 			</div><!-- .logo -->
 		</div>
 	</footer><!-- #colophon -->
@@ -113,6 +114,19 @@
 
 <script src="https://kit.fontawesome.com/e435c6ed9d.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+  Fancybox.bind('[data-fancybox="gallery"]', {
+	//
+  });    
+</script>
+<script src="/wp-content/themes/madeinwhitby/js/fitvid.js"></script>
+<script>
+  $(document).ready(function(){
+	// Target your .container, .wrapper, .post, etc.
+	$(".video").fitVids();
+  });
+</script>
 <script>
 	$('nav ul li.menu-item-has-children > a').append('<i class="fa-regular fa-chevron-down"></i>');
 	$('nav ul li.menu-item-has-children > a').click(function(){
@@ -127,6 +141,58 @@
 		};
 	})
 </script>
+
+<!--
+<div class="ht_overlay">
+	  <div class="ht_center">
+		  <div class="ht_window">
+			  <h3><strong>Dotting Some I's and Crossing Some T's</strong></h3>
+			  <p>We're just checking a few things with the powers that be.</p>
+			  <p class="capitalise">We'll be back soon</p>
+			  <img src="<?php bloginfo('stylesheet_directory');?>/images/madeinwhitby.jpg" alt="Hello Technology" />
+		  </div>
+	  </div>
+  </div>
+-->
+  
+  <style>
+	.ht_overlay{
+		z-index:100000;
+		width:100vw;
+		height:100vh;
+		position: fixed;
+		top:0px;
+		left:0px;
+		backdrop-filter: blur(4px);
+		background:rgba(255,255,255,1);
+	}	  
+	.ht_center{
+		max-width: 420px;
+		margin:0 auto;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		height:100vh;
+	}
+	.ht_window{
+		border-radius: 4px;
+		border:1px solid #eee;
+		box-shadow: 0px 0px 10px #ccc;
+		padding:2rem;
+		text-align: center;
+		background:#fff;
+	}
+	.ht_window h3{
+		margin-top:0;
+	}
+	.ht_window p.capitalise{
+		font-size:1rem;
+	}
+	.ht_window img{
+		max-width: 140px;
+		margin:2rem auto;
+	}
+  </style>
 
 <script>
 window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
@@ -146,7 +212,7 @@ var AUTOHIDE = Boolean(0);
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 <!-- Fathom - beautiful, simple website analytics -->
-<script src="https://cdn.usefathom.com/script.js" data-site="VPKMAXJJ" defer></script>
+<!-- <script src="https://cdn.usefathom.com/script.js" data-site="VPKMAXJJ" defer></script> -->
 <!-- / Fathom -->
 
 </body>

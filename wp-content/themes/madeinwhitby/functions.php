@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.'.rand() );
 }
 
 /**
@@ -289,7 +289,7 @@ function MiW_dashboard_add_widgets() {
 }
 
 function MiW_dashboard_widget_news_handler() {
-	_e( 'Welcome to your website.', 'ht' );
+	_e( 'Welcome to your website.', 'MiW' );
 }
 
 
@@ -299,7 +299,7 @@ function MiW_custom_dashboard_name(){
         return;
     }
 
-    $GLOBALS['title'] =  __( 'Hello Technology' ); 
+    $GLOBALS['title'] =  __( 'Made in Whitby' ); 
 }
 
 add_action( 'admin_head', 'MiW_custom_dashboard_name' );

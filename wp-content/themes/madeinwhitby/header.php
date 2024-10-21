@@ -18,19 +18,21 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-	<link rel="stylesheet" href="https://use.typekit.net/pkb4lcb.css">
+	<link rel="stylesheet" href="https://use.typekit.net/pxz1drp.css">
+	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCLV1rJZyOsUna33Knaml68MDsrvttYTXk" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hellotechnology' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'madeinwhitby' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="restrict">
 			<div class="site-branding">
-				<a href="/"><img src="<?php bloginfo('stylesheet_directory');?>/images/hello_technology_logo_green.svg" alt="Hello Technology" /></a>
+				<a href="/"><img src="<?php bloginfo('stylesheet_directory');?>/images/madeinwhitby.jpg" alt="Made in Whitby" /></a>
 			</div><!-- .site-branding -->
 	
 			<nav id="site-navigation" class="main-navigation">
@@ -46,11 +48,9 @@
 			</nav><!-- #site-navigation -->
 			
 			<div class="icons">
-				<a href="mailto:hi@hellotechnology.co.uk"><i class="fa fa-envelope"></i><span>hi@hellotechnology.co.uk</span></a>
-				<a href="tel:+44(0)1947878108"><i class="fa fa-phone"></i><span>01947 878 108</span></a>
-				<a href="https://linkedin.com/company/hellotechnology/"><i class="fab fa-linkedin"></i><span class="alt">LinkedIn</span></a>
-				<a href="https://instagram.com/_hellotechnology"><i class="fa fa-instagram"></i><span class="alt">Instagram</span></a> 
-				<a href="https://twitter.com/hellotechnology"><i class="fab fa-x-twitter"></i><span class="alt">Twitter/X</span></a>
+				<a href="mailto:info@madeinwhitby.om"><i class="fa fa-envelope"></i><span>info@madeinwhitby.com</span></a>
+				<a href="https://www.facebook.com/madeinwhitbyuk/"><i class="fa fa-linkedin"></i><span class="alt">Facebook</span></a> 
+				<a href="https://www.instagram.com/madeinwhitbyuk/"><i class="fa fa-instagram"></i><span class="alt">Instagram</span></a> 
 			</div>
 		</div>
 	</header><!-- #masthead -->
