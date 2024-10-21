@@ -19,7 +19,7 @@
 
 	<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 	<link rel="stylesheet" href="https://use.typekit.net/pxz1drp.css">
-	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCLV1rJZyOsUna33Knaml68MDsrvttYTXk" type="text/javascript"></script>
+	<script src="https://maps.google.com/maps/api/js?key=" type="text/javascript"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 	<?php wp_head(); ?>
 </head>
